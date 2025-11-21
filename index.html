@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belanja Cermat 💰 - Pengatur Anggaran</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="auth-page" class="page active">
+        <div class="auth-card">
+            <h1>Belanja Cermat 🚀</h1>
+            <p>Atur Uangmu, Raih Mimpimu!</p>
+            <input type="text" id="username-input" placeholder="Masukkan Nama Pengguna (Remaja)">
+            <button id="start-app-btn">Mulai & Atur Anggaran!</button>
+        </div>
+    </div>
+
+    <div id="dashboard-page" class="page hidden">
+        <header>
+            <h1 id="greeting-text">Halo, [Nama Pengguna]! 💸</h1>
+            <p>Pengatur Anggaran Harian Pintar</p>
+        </header>
+
+        <main>
+            <section class="budget-settings card">
+                <h2>Atur Anggaranmu!</h2>
+                <div class="input-group budget-control">
+                    <select id="budget-period">
+                        <option value="daily">Harian</option>
+                        <option value="weekly">Mingguan</option>
+                        <option value="monthly">Bulanan</option>
+                    </select>
+                    <input type="number" id="budget-amount-input" value="50000" min="0" placeholder="Jumlah Anggaran (Rp)">
+                    <button id="set-budget-btn">SET</button>
+                </div>
+                <p class="budget-display">Anggaran <span id="current-period">Harian</span>mu: <span id="current-budget">Rp50.000</span></p>
+                <p class="remaining-display">Sisa Uangmu: <span id="remaining-amount">Rp50.000</span></p>
+            </section>
+            
+            <hr>
+
+            <section class="expense-entry card">
+                <h2>Catat Pengeluaranmu ✏️</h2>
+                <div class="input-group expense-input">
+                    <input type="text" id="expense-description" placeholder="Deskripsi (ex: Jajan, Minuman)">
+                    <input type="number" id="expense-amount" placeholder="Jumlah (Rp)">
+                    <button id="add-expense-btn">TAMBAH</button>
+                </div>
+                <div id="alert-message" class="alert-box hidden"></div>
+            </section>
+
+            <hr>
+
+            <section class="expense-list-section card">
+                <h2>Riwayat Pengeluaran (Semua Periode)</h2>
+                <div class="date-header">
+                    <span id="current-date">Tanggal: 19 November 2025</span>
+                </div>
+                <ul id="expense-list">
+                    </ul>
+                <div class="summary">
+                    <p>Total Pengeluaran <span id="summary-period">Harian</span>:</p>
+                    <p class="total-amount-display"><span id="total-spent">Rp0</span></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Belanja Cermat. Atur Uangmu, Raih Mimpimu!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
